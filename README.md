@@ -19,3 +19,6 @@ There are several things to be checked and maybe improved:
 - handling of unexpected situations (e.g., wrongly configured USB port)
 - formatting of the output on the console
 
+# References
+- [Java-based tool for CM2016](https://gitlab.projecttac.com/tarator/cm2016)
+- [Description of the raw data](http://www.leisenfels.com/howto-charge-manager-2016-data-format)
