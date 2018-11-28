@@ -46,12 +46,12 @@ def read_CM2016 ():
 			timeout += 1
 
 		if timed_out:
-			print ("Timed out after {0} seconds.".format(timeout))
+			#print ("Timed out after {0} seconds.".format(timeout))
 			ser.close ()
-			raise TimeoutError ("The connection to {0} timed out after {1} s.".format (config.get('USB','port'), timeout))
+			raise Exception ("The connection to {0} timed out after {1} s.".format (config.get('USB','port'), timeout))
 
 	except Exception as x:
-		print (str(x))
+		#print (str(x))
 		ser.close()
 		raise x
 

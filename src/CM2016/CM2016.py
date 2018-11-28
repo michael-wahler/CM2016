@@ -7,7 +7,7 @@ __author__ = "Michael Wahler"
 __copyright__ = "Copyright 2018, Michael Wahler"
 __credits__ = ["Leisenfels UG"]
 __license__ = "GPLv3"
-__version__ = "0.1"
+__version__ = "0.2"
 __status__ = "Prototype"
 
 
@@ -69,10 +69,12 @@ class ChargeSlot (object):
 		except Exception as x:  #not found in dictionary
 			return "???"
 
+	def get_step_raw (self):
+		return self.data[4:6]
+	
 	# Program step: 01/03/05/07=charge, 02/04/06=discharge
 	def get_step (self):
-		get_step_raw = self.data[4:6]
-		return "charge" if get_step_raw in ["01", "03", "05", "07"] else "discharge"
+		return "charge" if self.get_step_raw() in ["01", "03", "05", "07"] else "discharge"
 
 	# 20=empty, "00 xx xx 07" or "00 xx xx 02"=RDY, "00 xx xx 21"=ERR, "01 xx xx 07"=TRI
 	def get_status (self):
