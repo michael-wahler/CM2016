@@ -13,16 +13,27 @@ from CM2016 import CMserial
 import mysql
 
 import datetime
-
-try:
-	buffer = CMserial.read_CM2016 ()
-	cm = CM2016.CM2016 (buffer)
-	cm.print_me()
-	print ("Adding CM2016 to DB")
-	mytime = datetime.datetime.now().isoformat()
-	mysql.add_CM2016(mytime, cm)
-except Exception as x:
-	print (str(x))
+import sys
 
 
+# if no command line argument is given, it prints the measurements to the console
+# if there is a CL argument 'db' (without quotes), it adds the measurements to the DB
+def main():
+	try:
+		buffer = CMserial.read_CM2016 ()
+		cm = CM2016.CM2016 (buffer)
+		
+		if len(sys.argv) == 1:
+			cm.print_me()
+		
+		if len (sys.argv) > 1:
+			if sys.argv[1] == 'db':
+				#print ("Adding CM2016 to DB")
+				mytime = datetime.datetime.now().isoformat()
+				mysql.add_CM2016(mytime, cm)
+	except Exception as x:
+		print (str(x))
 
+if __name__ == "__main__":
+    # execute only if run as a script
+    main()
