@@ -5,6 +5,7 @@ Python code to read measurements from the battery charger Voltcraft Charge Manag
 # Contents
 
 This repository contains
+- code to [read raw data](src/CM2016/CMserial.py) over USB from the CM2016 device
 - an [abstraction of the CM2016 unit](src/CM2016/CM2016.py) that provides classes to interpret raw data from the device
 - [example code](src/main.py) to read raw data from a CM2016 over USB, parse it, and display the information from the device
 
