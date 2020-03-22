@@ -7,12 +7,12 @@ __version__ = "0.1"
 __status__ = "Prototype"
 
 import time
-import ConfigParser
+import configparser
 import serial
 
 
 def read_CM2016 ():
-	config = ConfigParser.ConfigParser()
+	config = configparser.ConfigParser()
 	config.read('CM2016.ini')
 
 	# configure the serial connections (the parameters differs on the device you are connecting to)

@@ -32,7 +32,7 @@ def main():
 				mytime = datetime.datetime.now().isoformat()
 				mysql.add_CM2016(mytime, cm)
 	except Exception as x:
-		print (str(x))
+		print((str(x)))
 
 if __name__ == "__main__":
     # execute only if run as a script

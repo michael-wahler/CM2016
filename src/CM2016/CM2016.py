@@ -134,12 +134,12 @@ class ChargeSlot (object):
 			return D
 		
 	def print_me (self):
-			print ("-----" * 10)
-			print ("Slot {0} ({1})".format(self.name, self.data))
-			print ("active: {0}, program: {1}, step: {2}".format(self.is_active(), self.get_program(), self.get_step()))
-			print ("status: {0}".format (self.get_status()))
-			print ("running for {0} minutes".format(self.get_time_spent_in_minutes()))
-			print ("voltage: {0} mV, current: {1} mA".format (self.get_voltage_in_mV(), self.get_current_in_mA()))
-			print ("C: {0} mAh".format (self.get_charged_capacity_in_uAh()/1000.0))
-			print ("D: {0} mAh".format (self.get_discharged_capacity_in_uAh()/1000.0))
+			print(("-----" * 10))
+			print(("Slot {0} ({1})".format(self.name, self.data)))
+			print(("active: {0}, program: {1}, step: {2}".format(self.is_active(), self.get_program(), self.get_step())))
+			print(("status: {0}".format (self.get_status())))
+			print(("running for {0} minutes".format(self.get_time_spent_in_minutes())))
+			print(("voltage: {0} mV, current: {1} mA".format (self.get_voltage_in_mV(), self.get_current_in_mA())))
+			print(("C: {0} mAh".format (self.get_charged_capacity_in_uAh()/1000.0)))
+			print(("D: {0} mAh".format (self.get_discharged_capacity_in_uAh()/1000.0)))
 

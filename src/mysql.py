@@ -6,10 +6,10 @@ __license__ = "GPLv3"
 __version__ = "0.2"
 __status__ = "Prototype"
 
-import ConfigParser
+import configparser
 import MySQLdb
 
-config = ConfigParser.ConfigParser()
+config = configparser.ConfigParser()
 config.read('CM2016.ini')
 
 USERNAME = config.get('MySQL', 'username')
